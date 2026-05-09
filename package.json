@@ -12,6 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/your-org/prompt-logger.git"
   },
+  "files": [
+    "dist/",
+    "openclaw.plugin.json",
+    "README.md"
+  ],
   "openclaw": {
     "extensions": ["./dist/index.mjs"],
     "compat": {

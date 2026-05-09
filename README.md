@@ -53,12 +53,10 @@ Each raw file contains the complete agent messages array (system prompt, user me
 ## Installation
 
 ```bash
-# From ClawHub (once published)
-openclaw plugins install clawhub:prompt-logger
-
-# From npm (fallback during launch cutover)
-openclaw plugins install prompt-logger
+openclaw plugin install prompt-logger
 ```
+
+> Requires OpenClaw Gateway **v2026.5.0** or later.
 
 ## Configuration
 
@@ -70,6 +68,11 @@ Add to `openclaw.json`:
     "entries": {
       "prompt-logger": {
         "enabled": true,
+        // Required: this plugin uses llm_output/agent_end hooks which
+        // need explicit conversation access opt-in (security gate)
+        "hooks": {
+          "allowConversationAccess": true
+        },
         "config": {
           "retentionDays": 30,   // Auto-delete raw files older than N days
           "logInput": true,       // Record full prompt messages
@@ -80,6 +83,8 @@ Add to `openclaw.json`:
   }
 }
 ```
+
+**⚠️ Important:** Without `hooks.allowConversationAccess: true`, the plugin will load but silently produce no output. This is a Gateway security measure — non-bundled code plugins that access raw conversation content must opt in explicitly.
 
 ## Query examples
 

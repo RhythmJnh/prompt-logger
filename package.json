@@ -1,0 +1,37 @@
+{
+  "name": "prompt-logger",
+  "version": "1.0.0",
+  "description": "Logs complete LLM input/output to disk as JSON for debugging",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "author": {
+    "name": "年红"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-org/prompt-logger.git"
+  },
+  "openclaw": {
+    "extensions": ["./dist/index.mjs"],
+    "compat": {
+      "pluginApi": ">=2026.5.0",
+      "minGatewayVersion": "2026.5.0"
+    },
+    "build": {
+      "openclawVersion": "2026.5.7",
+      "pluginSdkVersion": "2026.5.7"
+    }
+  },
+  "keywords": [
+    "openclaw",
+    "openclaw-plugin",
+    "prompt-logger",
+    "debug",
+    "llm",
+    "logging"
+  ],
+  "devDependencies": {
+    "@types/node": "^25.6.2"
+  }
+}

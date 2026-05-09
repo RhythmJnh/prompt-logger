@@ -1,0 +1,29 @@
+{
+  "id": "prompt-logger",
+  "name": "Prompt Logger",
+  "description": "Logs complete LLM input/output to disk as JSON for debugging. Records full agent messages and LLM responses, with a lightweight JSONL index for searching.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "logInput": {
+        "type": "boolean",
+        "description": "Log full LLM input messages (system prompt, conversation, tool calls)",
+        "default": true
+      },
+      "logOutput": {
+        "type": "boolean",
+        "description": "Log LLM output responses",
+        "default": true
+      },
+      "retentionDays": {
+        "type": "number",
+        "description": "Auto-delete raw prompt files older than this many days (0 = never)",
+        "default": 30
+      }
+    }
+  }
+}

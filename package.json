@@ -1,6 +1,6 @@
 {
   "name": "prompt-logger",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Logs complete LLM input/output to disk as JSON for debugging",
   "type": "module",
   "private": false,
